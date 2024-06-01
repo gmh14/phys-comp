@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Physically Compatible 3D Object Modeling from a Single Image">
+  <meta name="keywords" content="Single-view Reconstruction, Physical Compatibility">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physically Compatible 3D Object Modeling from a Single Image</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet"> -->
+<link rel="icon" href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg fill='%23000000' height='800px' width='800px' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 392.598 392.598' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M390.943,214.238l-54.885-113.196c7.24,2.133,23.467,7.758,24.824,7.758c4.396,0,8.469-2.651,10.214-7.046 c2.133-5.624-0.646-11.895-6.271-14.093c-36.331-13.899-83.2-23.014-133.042-25.859c-3.297-11.96-12.606-21.527-24.436-25.212 V10.925C207.347,4.913,202.498,0,196.422,0c-6.077,0-10.99,4.848-10.99,10.925v25.729c-11.766,3.685-20.945,13.188-24.242,25.083 c-49.972,2.844-97.034,11.895-133.236,25.859c-5.624,2.133-8.404,8.469-6.271,14.093c1.681,4.331,5.818,6.982,10.214,6.982 c1.293,0,17.519-5.56,24.824-7.758L1.189,215.596c-0.065,0.129-1.099,5.301-1.099,5.43c1.939,40.016,34.78,71.37,74.861,71.37 c39.499,0,71.887-30.384,74.731-69.56c0.129-0.776-0.711-7.24-1.552-8.469L89.302,93.026c22.562-4.655,47.063-7.822,72.533-9.244 c3.814,10.925,12.541,19.459,23.596,22.949v216.954h-46.739c-3.297,0-6.465,1.552-8.598,4.073l-37.43,47.127 c-2.651,3.232-3.103,7.758-1.228,11.507c1.875,3.814,5.624,6.206,9.826,6.206h190.255c0.065,0,0.065,0,0.065,0 c6.012,0,10.925-4.849,10.925-10.925c0-3.038-1.228-5.818-3.232-7.822l-36.719-46.287c-2.069-2.65-5.236-4.073-8.598-4.073 h-46.675V106.602c11.119-3.491,19.911-12.024,23.725-23.014c25.341,1.487,49.842,4.655,72.404,9.244l-59.41,122.634 c-0.065,0.129-1.099,5.301-1.099,5.43c1.939,40.016,34.78,71.37,74.861,71.37c39.499,0,71.887-30.384,74.731-69.56 C392.624,221.996,391.783,215.467,390.943,214.238z M74.951,270.545c-24.501,0-45.188-16.549-51.329-39.305h102.594 C120.203,253.996,99.452,270.545,74.951,270.545z M121.561,209.39H28.406l46.61-96.065L121.561,209.39z M248.785,345.341 l20.17,25.471H123.824l20.17-25.471H248.785z M196.422,86.626c-8.275,0-14.998-6.723-14.998-14.998 c0-8.275,6.723-14.998,14.998-14.998c8.275,0,14.998,6.723,14.998,14.998C211.42,79.903,204.696,86.626,196.422,86.626z M317.763,113.325l46.61,96.065h-93.22L317.763,113.325z M317.763,270.545c-24.501,0-45.188-16.549-51.329-39.305h102.594 C362.951,253.996,342.264,270.545,317.763,270.545z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Physically Compatible 3D Object Modeling from a Single Image</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.minghaoguo.com/">Minghao Guo</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://bohanwang123.com/">Bohan Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://pingchuan.ma/">Pingchuan Ma</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://tianyuanzhang.com/">Tianyuan Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.crystalowens.com/">Crystal Elaine Owens</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan</a><sup>2,3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://web.mit.edu/cocosci/josh.html">Joshua B. Tenenbaum</a><sup>1,4,5</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://people.csail.mit.edu/kaiming/">Kaiming He</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://cdfg.mit.edu/wojciech">Wojciech Matusik</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>MIT CSAIL,</span>
+            <span class="author-block"><sup>2</sup>UMass Amherst,</span>
+            <span class="author-block"><sup>3</sup>MIT-IBM Waston AI Lab,</span>
+            <span class="author-block"><sup>4</sup>MIT BCS,</span>
+            <span class="author-block"><sup>5</sup>Center for Brains, Minds and Machines</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <!-- <a href="https://arxiv.org/abs/2011.12948" -->
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <!-- <a href="https://github.com/google/nerfies" -->
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">PhysComp</span> transforms single images into 3D physical objects that withstand real-world physical forces.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present a computational framework that transforms single images into 3D physical objects. 
+            The visual geometry of a physical object in an image is determined by three orthogonal attributes: mechanical properties, external forces, and rest-shape geometry. 
+            Existing single-view 3D reconstruction methods often overlook this underlying composition, presuming rigidity or neglecting external forces. 
+            Consequently, the reconstructed objects fail to withstand real-world physical forces, resulting in instability or undesirable deformation -- diverging from their intended designs as depicted in the image. 
+            Our optimization framework addresses this by embedding physical compatibility into the reconstruction process. 
+            We explicitly decompose the three physical attributes and link them through static equilibrium, which serves as a hard constraint, ensuring that the optimized physical shapes exhibit desired physical behaviors. 
+            Evaluations on a dataset collected from Objaverse demonstrate that our framework consistently enhances the physical realism of 3D models over existing methods. 
+            The utility of our framework extends to practical applications in dynamic simulations and 3D printing, where adherence to physical compatibility is paramount.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Pipeline. -->
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <br>
+          <image src="./static/images/pipeline.png" width=90% style="display: block; margin: auto;"></image>
+          <br>
+          <p class="text-justify">
+            (Left) The visual geometry of a physical object in an image is determined by three orthogonal attributes: mechanical properties, external forces, and rest-shape geometry.
+            (Right) Given predefined mechanical properties and external forces, 
+            our pipeline optimizes the rest-shape geometry to ensure that the shape, 
+            when in a state of static equilibrium, 
+            aligns with the target image and meets stability criteria.
+          </p>
+      </div>
+  </div>
+    <!--/ Pipeline. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Interactive 3D. -->
+    <h2 class="title is-3">Physical Compatibility Optimization</h2>
+    <div class="content has-text-justified">
+      <p>
+        TODO
+      </p>
+    </div>
+    <div class="content has-text-centered">
+    </div>
+    <!--/ Interactive 3D. -->
+
+    <!-- Varying Materials. -->
+    <h2 class="title is-3">Varying Materials</h2>
+    <div class="content has-text-justified">
+      <p>
+        By changing the material properties, 
+        <span class="dnerf">PhysComp</span> can produce various rest-shape geometries, 
+        which all result in the same static shapes.
+        Although these static shapes appear identical under static equilibrium, 
+        they exhibit different deformation when subjected to the same external forces, 
+        attributable to the differences in their material properties.
+      </p>
+    </div>
+    <div class="content has-text-centered">
+      <video id="replay-video"
+              controls
+              muted
+              preload
+              playsinline
+              width="85%">
+        <source src="./static/videos/eagle-with-annotation.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    <!--/ Varying Materials. -->
+    
+    
+    <!-- Applications. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Applications</h2>
+
+        <!-- Dynamic Simulation. -->
+        <h3 class="title is-4">Dynamic Simulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            Results of <span class="dnerf">PhysComp</span> are simulation-ready and can be seamlessly integrated into dynamic simulation pipeline 
+            to produce complex dynamics and motions.
+          </p>
+        </div>
+        <br>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                    controls
+                    muted
+                    preload
+                    playsinline
+                    width="90%">
+              <source src="./static/videos/plant-animate-anotated.mp4"
+                      type="video/mp4">
+          </video>
+        </div>
+        <br>
+        <!--/ Dynamic Simulation. -->
+
+        <!-- 3D Printing. -->
+        <h3 class="title is-4">3D Printing</h3>
+        <div class="content has-text-justified">
+          <p>
+            Real-world validation using 3D printing shows that shapes optimized using <span class="dnerf">PhysComp</span> closely replicate the input images.
+          </p>
+        </div>
+        <br>
+        <div class="content has-text-centered">
+          <image src="./static/images/printing.png" width=90% style="display: block; margin: auto;"></image>
+        </div>
+        <br>
+        <!--/ 3D Printing. -->
+
+      </div>
+    </div>
+    <!--/ Applications. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{guo2024physcomp,
+  author    = {Guo, Minghao and Wang, Bohan and Ma, Pingchuan and Zhang, Tianyuan and Owens, Crystal Elaine and Gan, Chuang and Tenenbaum, Joshua B. and He, Kaiming and Matusik, Wojciech},
+  title     = {Physically Compatible 3D Object Modeling from a Single Image},
+  journal   = {arXiv preprint},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The source code of this website is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+            We thank the authors for sharing the template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
