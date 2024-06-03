@@ -2,6 +2,38 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.rotate {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* 1 text and 6 images */
+.cols-txt {width: 3%; vertical-align: bottom;}
+.cols-img {width: 15%;}
+
+.cols-img model-viewer {
+  width: 100%;
+}
+
+[class*="cols-"] {
+  height: 100%;
+  padding: 5px;
+  /* border: 1px solid red; */
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+}
+
+.row {
+  content: "";
+  clear: both;
+  display: table;
+  width: 100%;
+}
 
 .footer .icon-link {
     font-size: 25px;

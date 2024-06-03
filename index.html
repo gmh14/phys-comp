@@ -30,14 +30,14 @@
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
 <body>
@@ -179,13 +179,317 @@
 
     <!-- Interactive 3D. -->
     <h2 class="title is-3">Physical Compatibility Optimization</h2>
+
     <div class="content has-text-justified">
       <p>
-        TODO
+        TODO: Inverse Optimization.
       </p>
     </div>
     <div class="content has-text-centered">
+
+      <div class="row">
+        <div class="cols-txt"></div>
+        <div class="cols-img">Input Image</div>
+        <div class="cols-img">Wonder3D</div>
+        <div class="cols-img">MeshLRM</div>
+        <div class="cols-img">TripoSR</div>
+        <div class="cols-img">LGM</div>
+        <div class="cols-img">TetSphere</div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">rest w/o optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/wonder3d/before_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/meshlrm/before_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/triposr/before_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/lgm/before_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/tetsphere/before_opt_rest.glb">
+          </model-viewer>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">static w/o optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/wonder3d/before_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/meshlrm/before_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/triposr/before_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/lgm/before_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/tetsphere/before_opt_static.glb">
+          </model-viewer>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">rest w/ optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/wonder3d/after_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/meshlrm/after_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/triposr/after_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/lgm/after_opt_rest.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/tetsphere/after_opt_rest.glb">
+          </model-viewer>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">static w/ optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/wonder3d/after_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/meshlrm/after_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/triposr/after_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/lgm/after_opt_static.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/8a8d928750bc4cf4891dfa1cfe265b05/tetsphere/after_opt_static.glb">
+          </model-viewer>
+        </div>
+      </div>
     </div>
+
+
+    <div class="content has-text-justified">
+      <p>
+        TODO: Make it stand.
+      </p>
+    </div>
+    <div class="content has-text-centered">
+
+      <div class="row">
+        <div class="cols-txt"></div>
+        <div class="cols-img">Input Image</div>
+        <div class="cols-img">Wonder3D</div>
+        <div class="cols-img">MeshLRM</div>
+        <div class="cols-img">TripoSR</div>
+        <div class="cols-img">LGM</div>
+        <div class="cols-img">TetSphere</div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">w/o optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/wonder3d/21a6714ec4bc4f929497a3a0e62ad548_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/meshlrm/21a6714ec4bc4f929497a3a0e62ad548_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/triposr/21a6714ec4bc4f929497a3a0e62ad548_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/lgm/21a6714ec4bc4f929497a3a0e62ad548_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/tetsphere/21a6714ec4bc4f929497a3a0e62ad548_before_opt.glb">
+          </model-viewer>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">w/ optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/wonder3d/21a6714ec4bc4f929497a3a0e62ad548_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/meshlrm/21a6714ec4bc4f929497a3a0e62ad548_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/triposr/21a6714ec4bc4f929497a3a0e62ad548_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/lgm/21a6714ec4bc4f929497a3a0e62ad548_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/21a6714ec4bc4f929497a3a0e62ad548/tetsphere/21a6714ec4bc4f929497a3a0e62ad548_after_opt.glb">
+          </model-viewer>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">w/o optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/221e70566ad3468f880694520506365e/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/wonder3d/221e70566ad3468f880694520506365e_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/meshlrm/221e70566ad3468f880694520506365e_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/triposr/221e70566ad3468f880694520506365e_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/lgm/221e70566ad3468f880694520506365e_before_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/tetsphere/221e70566ad3468f880694520506365e_before_opt.glb">
+          </model-viewer>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="cols-txt">
+          <div class="rotate">w/ optim</div>
+        </div>
+        <div class="cols-img">
+          <img src="./static/meshes/221e70566ad3468f880694520506365e/000.png">
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/wonder3d/221e70566ad3468f880694520506365e_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/meshlrm/221e70566ad3468f880694520506365e_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/triposr/221e70566ad3468f880694520506365e_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/lgm/221e70566ad3468f880694520506365e_after_opt.glb">
+          </model-viewer>
+        </div>
+        <div class="cols-img">
+          <model-viewer exposure="0.5" camera-controls enable-pan shadow-intensity="1" camera-orbit="45deg 75deg"
+              src="./static/meshes/221e70566ad3468f880694520506365e/tetsphere/221e70566ad3468f880694520506365e_after_opt.glb">
+          </model-viewer>
+        </div>
+      </div>
+
+    </div>
+
     <!--/ Interactive 3D. -->
 
     <!-- Varying Materials. -->
